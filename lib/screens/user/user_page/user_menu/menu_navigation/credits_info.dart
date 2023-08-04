@@ -2,27 +2,21 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../../../state/user_state.dart';
 
-class CardInfo extends StatefulWidget {
-  final card;
-  final cardName;
-  final logo;
-  final money;
-  final year;
+class CreditsInfo extends StatefulWidget {
+  final interestRate;
+  final repaymentTerm;
 
-  const CardInfo({
+  const CreditsInfo({
     Key? key,
-    required this.card,
-    required this.cardName,
-    required this.logo,
-    required this.money,
-    required this.year,
+    required this.interestRate,
+    required this.repaymentTerm,
   }) : super(key: key);
 
   @override
-  State<CardInfo> createState() => _CardInfoState();
+  State<CreditsInfo> createState() => _CreditsInfoState();
 }
 
-class _CardInfoState extends State<CardInfo> {
+class _CreditsInfoState extends State<CreditsInfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -136,13 +130,15 @@ class _CardInfoState extends State<CardInfo> {
             const SizedBox(
               height: 10,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 15.0),
+            const Padding(
+              padding: EdgeInsets.only(
+                left: 15.0,
+              ),
               child: Text(
-                '${widget.cardName}',
-                style: const TextStyle(
+                'Credit Without Collaterial',
+                style: TextStyle(
                   color: Color(0xFFF2BE22),
-                  fontSize: 25,
+                  fontSize: 20,
                 ),
               ),
             ),
@@ -153,102 +149,24 @@ class _CardInfoState extends State<CardInfo> {
               padding: const EdgeInsets.only(left: 15.0),
               child: Container(
                 width: 330,
-                height: 0.5,
+                height: 3,
                 decoration: BoxDecoration(
-                  color: const Color(0xFFD9D9D9),
+                  color: const Color(0xFF646A73),
                   borderRadius: BorderRadius.circular(3),
                 ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(
-                left: 70.0,
-                top: 20,
+                left: 15.0,
+                top: 10,
               ),
-              child: Stack(
-                children: [
-                  SizedBox(
-                    width: 230,
-                    height: 145,
-                    child: Image.asset(
-                      '${widget.card}',
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                  Positioned(
-                    top: 17,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 30.0),
-                      child: Image.asset(
-                        'images/chip.png',
-                        width: 25,
-                        height: 25,
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    top: 21,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 65.0),
-                      child: Image.asset(
-                        'images/paypass.png',
-                        width: 16,
-                        height: 16,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  const Positioned(
-                    top: 67,
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 30.0),
-                      child: Text(
-                        'XXXX XXXX XXXX XXXX',
-                        style: TextStyle(
-                          color: Color(0xFFBDBDBD),
-                          fontSize: 15,
-                        ),
-                      ),
-                    ),
-                  ),
-                  const Positioned(
-                    bottom: 18,
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 30.0),
-                      child: Text(
-                        'NAME SURNAME',
-                        style: TextStyle(
-                          color: Color(0xFFBDBDBD),
-                          fontSize: 10,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    bottom: 18,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 185.0),
-                      child: Image.asset(
-                        '${widget.logo}',
-                        width: 25,
-                        height: 25,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 15.0),
-              child: Container(
+              child: SizedBox(
+                height: 190,
                 width: 330,
-                height: 0.5,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFD9D9D9),
-                  borderRadius: BorderRadius.circular(3),
+                child: Image.asset(
+                  'images/credit_collection.png',
+                  fit: BoxFit.fill,
                 ),
               ),
             ),
@@ -256,90 +174,102 @@ class _CardInfoState extends State<CardInfo> {
               height: 20,
             ),
             const Padding(
-              padding: EdgeInsets.only(left: 15.0),
+              padding: EdgeInsets.only(
+                left: 15.0,
+              ),
               child: Text(
-                'Card currency',
+                'Currency',
                 style: TextStyle(
                   color: Color(0xFFF2BE22),
-                  fontSize: 16,
+                  fontSize: 18,
                 ),
               ),
             ),
             const SizedBox(
-              height: 5,
+              height: 7,
             ),
             const Padding(
-              padding: EdgeInsets.only(left: 15.0),
+              padding: EdgeInsets.only(
+                left: 15.0,
+              ),
               child: Text(
-                '\$',
+                'USD \$',
                 style: TextStyle(
-                  color: Color(0xFFFFFFFF),
-                  fontSize: 15,
+                  color: Color(0xFFDFE5EE),
+                  fontSize: 12,
                 ),
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 20,
             ),
             const Padding(
-              padding: EdgeInsets.only(left: 15.0),
+              padding: EdgeInsets.only(
+                left: 15.0,
+              ),
               child: Text(
-                'Annual Service',
+                'Interest rate',
                 style: TextStyle(
                   color: Color(0xFFF2BE22),
-                  fontSize: 16,
+                  fontSize: 18,
                 ),
               ),
             ),
             const SizedBox(
-              height: 5,
+              height: 7,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 15.0),
+              padding: const EdgeInsets.only(
+                left: 15.0,
+              ),
               child: Text(
-                widget.money,
+                '${widget.interestRate}',
                 style: const TextStyle(
-                  color: Color(0xFFFFFFFF),
-                  fontSize: 14,
+                  color: Color(0xFFDFE5EE),
+                  fontSize: 12,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(
+                left: 15.0,
+              ),
+              child: Text(
+                'Repayment term',
+                style: TextStyle(
+                  color: Color(0xFFF2BE22),
+                  fontSize: 18,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 7,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 15.0,
+              ),
+              child: Text(
+                '${widget.repaymentTerm}',
+                style: const TextStyle(
+                  color: Color(0xFFDFE5EE),
+                  fontSize: 12,
                 ),
               ),
             ),
             const SizedBox(
               height: 15,
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 15.0),
-              child: Text(
-                'Validity year',
-                style: TextStyle(
-                  color: Color(0xFFF2BE22),
-                  fontSize: 16,
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 15.0),
-              child: Text(
-                widget.year,
-                style: const TextStyle(
-                  color: Color(0xFFFFFFFF),
-                  fontSize: 14,
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
             Padding(
               padding: const EdgeInsets.only(left: 15.0),
               child: Container(
                 width: 330,
                 height: 0.5,
                 decoration: BoxDecoration(
-                  color: const Color(0xFFD9D9D9),
+                  color: const Color(0xFF646A73),
                   borderRadius: BorderRadius.circular(3),
                 ),
               ),
@@ -348,17 +278,16 @@ class _CardInfoState extends State<CardInfo> {
               height: 20,
             ),
             const Padding(
-              padding: EdgeInsets.only(left: 15.0),
+              padding: EdgeInsets.only(
+                left: 15.0,
+              ),
               child: Text(
-                'Use the wide scope of advantages of'
-                ' premium class Business card by paying as'
-                ' low as USD 100 a year. Order the card'
-                ' through platform and receive 20%'
-                ' discount for the service fee for the first'
-                ' year by paying USD 6,400 instead of USD'
-                ' 8,000. Cash withdrawal with Business card'
-                ' from all ATMs system is free of charge.'
-                ' Business cards are accepted worldwide.',
+                    'Get a loan/credit line up to 2,000 USD/ 3200\$'
+                    'within a few minutes, without collateral.'
+                    'The loan is provided without commission and '
+                    'other additional payments.       To get a loan,'
+                    ' you need to have a good credit history and'
+                    ' an appropriate credit score.',
                 style: TextStyle(
                   color: Color(0xFFDFE5EE),
                   fontSize: 16,
@@ -366,7 +295,7 @@ class _CardInfoState extends State<CardInfo> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 100.0,),
+              padding: const EdgeInsets.only(left: 100.0),
               child: TextButton(
                 onPressed: () {
                   Navigator.pop(context);

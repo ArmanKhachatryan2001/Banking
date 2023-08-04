@@ -10,9 +10,6 @@ abstract class _BankingState with Store {
   ObservableList<UserData> user = ObservableList<UserData>.of([]);
 
   @observable
-  Color? color;
-
-  @observable
   int userDataIndex = 0;
 
   @observable
@@ -44,7 +41,7 @@ abstract class _BankingState with Store {
     bankingStateIndex = index;
   }
 
-  @action /////////////////
+  @action
   void clearUserData() {
     user.clear();
   }
@@ -57,15 +54,6 @@ abstract class _BankingState with Store {
   @action
   void changeImageCode(String imageCode) {
     flagImageCode = imageCode;
-  }
-
-  @action
-  void changeButton(bool flag) {
-    if (flag) {
-      color = Colors.white38;
-    } else {
-      color = null;
-    }
   }
 
   @action

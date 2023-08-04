@@ -60,7 +60,6 @@ class _SignInPageState extends State<SignInPage> {
                 height: 0.5,
                 decoration: BoxDecoration(
                   color: const Color(0xFF646A73),
-                  borderRadius: BorderRadius.circular(1),
                 ),
               ),
               const SizedBox(

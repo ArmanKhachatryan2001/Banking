@@ -1,28 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../../state/user_state.dart';
 
-class CardInfo extends StatefulWidget {
-  final card;
-  final cardName;
-  final logo;
-  final money;
-  final year;
-
-  const CardInfo({
-    Key? key,
-    required this.card,
-    required this.cardName,
-    required this.logo,
-    required this.money,
-    required this.year,
-  }) : super(key: key);
+class TransferInfo extends StatefulWidget {
+  const TransferInfo({super.key});
 
   @override
-  State<CardInfo> createState() => _CardInfoState();
+  State<TransferInfo> createState() => _TransferInfoState();
 }
 
-class _CardInfoState extends State<CardInfo> {
+class _TransferInfoState extends State<TransferInfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -136,11 +124,13 @@ class _CardInfoState extends State<CardInfo> {
             const SizedBox(
               height: 10,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 15.0),
+            const Padding(
+              padding: EdgeInsets.only(
+                left: 15.0,
+              ),
               child: Text(
-                '${widget.cardName}',
-                style: const TextStyle(
+                'MoneyGram',
+                style: TextStyle(
                   color: Color(0xFFF2BE22),
                   fontSize: 25,
                 ),
@@ -160,213 +150,164 @@ class _CardInfoState extends State<CardInfo> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 70.0,
-                top: 20,
-              ),
-              child: Stack(
-                children: [
-                  SizedBox(
-                    width: 230,
-                    height: 145,
-                    child: Image.asset(
-                      '${widget.card}',
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                  Positioned(
-                    top: 17,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 30.0),
-                      child: Image.asset(
-                        'images/chip.png',
-                        width: 25,
-                        height: 25,
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    top: 21,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 65.0),
-                      child: Image.asset(
-                        'images/paypass.png',
-                        width: 16,
-                        height: 16,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  const Positioned(
-                    top: 67,
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 30.0),
-                      child: Text(
-                        'XXXX XXXX XXXX XXXX',
-                        style: TextStyle(
-                          color: Color(0xFFBDBDBD),
-                          fontSize: 15,
-                        ),
-                      ),
-                    ),
-                  ),
-                  const Positioned(
-                    bottom: 18,
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 30.0),
-                      child: Text(
-                        'NAME SURNAME',
-                        style: TextStyle(
-                          color: Color(0xFFBDBDBD),
-                          fontSize: 10,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    bottom: 18,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 185.0),
-                      child: Image.asset(
-                        '${widget.logo}',
-                        width: 25,
-                        height: 25,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
             const SizedBox(
-              height: 10,
+              height: 25,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 15.0),
-              child: Container(
-                width: 330,
-                height: 0.5,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFD9D9D9),
-                  borderRadius: BorderRadius.circular(3),
+              padding: const EdgeInsets.only(left: 20.0),
+              child: SizedBox(
+                width: 320,
+                height: 200,
+                child: Image.asset(
+                  'images/moneyGram.png',
+                  fit: BoxFit.fill,
                 ),
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 25,
             ),
             const Padding(
-              padding: EdgeInsets.only(left: 15.0),
+              padding: EdgeInsets.only(
+                left: 25.0,
+              ),
               child: Text(
-                'Card currency',
+                'Commission Fee',
                 style: TextStyle(
                   color: Color(0xFFF2BE22),
-                  fontSize: 16,
+                  fontSize: 17,
                 ),
               ),
             ),
             const SizedBox(
-              height: 5,
+              height: 7,
             ),
             const Padding(
-              padding: EdgeInsets.only(left: 15.0),
-              child: Text(
-                '\$',
-                style: TextStyle(
-                  color: Color(0xFFFFFFFF),
-                  fontSize: 15,
-                ),
+              padding: EdgeInsets.only(
+                left: 25.0,
               ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const Padding(
-              padding: EdgeInsets.only(left: 15.0),
               child: Text(
-                'Annual Service',
-                style: TextStyle(
-                  color: Color(0xFFF2BE22),
-                  fontSize: 16,
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 15.0),
-              child: Text(
-                widget.money,
-                style: const TextStyle(
-                  color: Color(0xFFFFFFFF),
-                  fontSize: 14,
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const Padding(
-              padding: EdgeInsets.only(left: 15.0),
-              child: Text(
-                'Validity year',
-                style: TextStyle(
-                  color: Color(0xFFF2BE22),
-                  fontSize: 16,
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 15.0),
-              child: Text(
-                widget.year,
-                style: const TextStyle(
-                  color: Color(0xFFFFFFFF),
-                  fontSize: 14,
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 15.0),
-              child: Container(
-                width: 330,
-                height: 0.5,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFD9D9D9),
-                  borderRadius: BorderRadius.circular(3),
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const Padding(
-              padding: EdgeInsets.only(left: 15.0),
-              child: Text(
-                'Use the wide scope of advantages of'
-                ' premium class Business card by paying as'
-                ' low as USD 100 a year. Order the card'
-                ' through platform and receive 20%'
-                ' discount for the service fee for the first'
-                ' year by paying USD 6,400 instead of USD'
-                ' 8,000. Cash withdrawal with Business card'
-                ' from all ATMs system is free of charge.'
-                ' Business cards are accepted worldwide.',
+                '2 - 300 \$',
                 style: TextStyle(
                   color: Color(0xFFDFE5EE),
-                  fontSize: 16,
+                  fontSize: 14,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(
+                left: 25.0,
+              ),
+              child: Text(
+                'Maximum amount',
+                style: TextStyle(
+                  color: Color(0xFFF2BE22),
+                  fontSize: 17,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 7,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(
+                left: 25.0,
+              ),
+              child: Text(
+                '10,000\$',
+                style: TextStyle(
+                  color: Color(0xFFDFE5EE),
+                  fontSize: 14,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(
+                left: 25.0,
+              ),
+              child: Text(
+                'Transfer Period',
+                style: TextStyle(
+                  color: Color(0xFFF2BE22),
+                  fontSize: 17,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 7,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(
+                left: 25.0,
+              ),
+              child: Text(
+                '15 - 30 Minutes',
+                style: TextStyle(
+                  color: Color(0xFFDFE5EE),
+                  fontSize: 14,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 15.0),
+              child: Container(
+                width: 330,
+                height: 0.5,
+                decoration: BoxDecoration(
+                  color: const Color(0xFFD9D9D9),
+                  borderRadius: BorderRadius.circular(3),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(
+                left: 15.0,
+              ),
+              child: Text(
+                'Send and receive money transfers in 192'
+                ' countries of the     world though МoneyGram'
+                ' money transfer system. Besides transfers'
+                ' throughout all the countries of the world'
+                ' the transfer system offers also payment of'
+                ' US bills from Armenia. MoneyGram International'
+                ' company is among the leading international'
+                ' companies in the sphere of money transfers.',
+                style: TextStyle(
+                  color: Color(0xFFDFE5EE),
+                  fontSize: 12,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 15.0),
+              child: Container(
+                width: 330,
+                height: 0.5,
+                decoration: BoxDecoration(
+                  color: const Color(0xFF646A73),
+                  borderRadius: BorderRadius.circular(3),
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 100.0,),
+              padding: const EdgeInsets.only(
+                left: 100.0,
+              ),
               child: TextButton(
                 onPressed: () {
                   Navigator.pop(context);

@@ -1,7 +1,12 @@
+import 'package:banking/screens/user/user_page/user_menu/menu_navigation/aboutUs.dart';
+import 'package:banking/screens/user/user_page/user_menu/menu_navigation/credits.dart';
+import 'package:banking/screens/user/user_page/user_menu/menu_navigation/customers_info.dart';
+import 'package:banking/screens/user/user_page/user_menu/menu_navigation/depostis.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'menu_navigation/cards.dart';
+import 'menu_navigation/transfers.dart';
 
 class UserMenu extends StatefulWidget {
   const UserMenu({super.key});
@@ -72,7 +77,14 @@ class _UserMenuState extends State<UserMenu> {
             height: 7,
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Credits(),
+                ),
+              );
+            },
             child: const Text(
               'Credits',
               style: TextStyle(
@@ -99,7 +111,14 @@ class _UserMenuState extends State<UserMenu> {
             height: 7,
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Transfers(),
+                ),
+              );
+            },
             child: const Text(
               'Transfer',
               style: TextStyle(
@@ -126,7 +145,14 @@ class _UserMenuState extends State<UserMenu> {
             height: 7,
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Depostis(),
+                ),
+              );
+            },
             child: const Text(
               'Depostis',
               style: TextStyle(
@@ -153,7 +179,14 @@ class _UserMenuState extends State<UserMenu> {
             height: 7,
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CustomersInfo(),
+                ),
+              );
+            },
             child: const Text(
               'Customers',
               style: TextStyle(
@@ -180,7 +213,14 @@ class _UserMenuState extends State<UserMenu> {
             height: 7,
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AboutUs(),
+                ),
+              );
+            },
             child: const Text(
               'About Us',
               style: TextStyle(

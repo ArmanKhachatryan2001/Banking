@@ -24,21 +24,6 @@ mixin _$BankingState on _BankingState, Store {
     });
   }
 
-  late final _$colorAtom = Atom(name: '_BankingState.color', context: context);
-
-  @override
-  Color? get color {
-    _$colorAtom.reportRead();
-    return super.color;
-  }
-
-  @override
-  set color(Color? value) {
-    _$colorAtom.reportWrite(value, super.color, () {
-      super.color = value;
-    });
-  }
-
   late final _$userDataIndexAtom =
       Atom(name: '_BankingState.userDataIndex', context: context);
 
@@ -167,6 +152,22 @@ mixin _$BankingState on _BankingState, Store {
     });
   }
 
+  late final _$screenIndexAtom =
+      Atom(name: '_BankingState.screenIndex', context: context);
+
+  @override
+  int get screenIndex {
+    _$screenIndexAtom.reportRead();
+    return super.screenIndex;
+  }
+
+  @override
+  set screenIndex(int value) {
+    _$screenIndexAtom.reportWrite(value, super.screenIndex, () {
+      super.screenIndex = value;
+    });
+  }
+
   late final _$_BankingStateActionController =
       ActionController(name: '_BankingState', context: context);
 
@@ -215,17 +216,6 @@ mixin _$BankingState on _BankingState, Store {
   }
 
   @override
-  void changeButton(bool flag) {
-    final _$actionInfo = _$_BankingStateActionController.startAction(
-        name: '_BankingState.changeButton');
-    try {
-      return super.changeButton(flag);
-    } finally {
-      _$_BankingStateActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
   void check(bool flag) {
     final _$actionInfo = _$_BankingStateActionController.startAction(
         name: '_BankingState.check');
@@ -251,7 +241,6 @@ mixin _$BankingState on _BankingState, Store {
   String toString() {
     return '''
 user: ${user},
-color: ${color},
 userDataIndex: ${userDataIndex},
 isChecked: ${isChecked},
 eyeFlag: ${eyeFlag},
@@ -259,7 +248,8 @@ signInCheck: ${signInCheck},
 flagImage: ${flagImage},
 flagImageCode: ${flagImageCode},
 checkData: ${checkData},
-bankingStateIndex: ${bankingStateIndex}
+bankingStateIndex: ${bankingStateIndex},
+screenIndex: ${screenIndex}
     ''';
   }
 }

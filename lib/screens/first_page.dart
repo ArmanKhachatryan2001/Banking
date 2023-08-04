@@ -1,7 +1,9 @@
+import 'package:banking/screens/models/user_data.dart';
 import 'package:banking/screens/sign_in_screen/sign_in_page.dart';
-import 'package:banking/state/user_state.dart';
+import 'package:banking/screens/user/home_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
+
+import '../state/user_state.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,7 +13,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,54 +35,46 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            Observer(
-              builder: (_) {
-                return Positioned(
-                  bottom: 70,
-                  right: 20,
-                  child: Container(
-                    width: 320,
-                    decoration: UserState.bankingState.color != null
-                        ? BoxDecoration(
-                      color: UserState.bankingState.color,
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(
-                        width: 0.5,
-                        color: const Color(0xFFF2BE22),
-                      ),
-                    )
-                        : BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(
-                        width: 0.5,
-                        color: const Color(0xFFF2BE22),
-                      ),
-                    ),
-                    child: TextButton(
-                      onPressed: () {
-                        UserState.bankingState.changeButton(true);
-                        Future.delayed(const Duration(milliseconds: 50), () {
-                          UserState.bankingState.changeButton(false);
-                        });
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) =>
-                                SignInPage(),
-                          ),
-                        );
-                      },
-                      child: const Text(
-                        'Get Started!',
-                        style: TextStyle(
-                          color: Color(0xFFF2BE22),
-                          fontSize: 18,
+            Positioned(
+              bottom: 70,
+              right: 20,
+              child: Container(
+                width: 320,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(
+                    width: 0.5,
+                    color: const Color(0xFFF2BE22),
+                  ),
+                ),
+                child: TextButton(
+                  onPressed: () {
+                    if (UserState.bankingState.isChecked) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => UserPage(),
                         ),
-                      ),
+                      );
+                    } else {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              SignInPage(),
+                        ),
+                      );
+                    }
+                  },
+                  child: const Text(
+                    'Get Started!',
+                    style: TextStyle(
+                      color: Color(0xFFF2BE22),
+                      fontSize: 18,
                     ),
                   ),
-                );
-              },
+                ),
+              ),
             ),
           ],
         ),
