@@ -1,3 +1,4 @@
+import 'package:banking/screens/sign_in_screen/forgot_password.dart';
 import 'package:banking/screens/sign_in_screen/registration_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -5,7 +6,6 @@ import '../../state/user_state.dart';
 import '../user/home_page.dart';
 
 class SignInPage extends StatefulWidget {
-
   const SignInPage({
     Key? key,
   }) : super(key: key);
@@ -235,7 +235,14 @@ class _SignInPageState extends State<SignInPage> {
                             width: 75,
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ForgotPassword(),
+                                ),
+                              );
+                            },
                             child: const Text(
                               'Forgot password?',
                               style: TextStyle(
