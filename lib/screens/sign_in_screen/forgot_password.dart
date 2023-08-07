@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_sms/flutter_sms.dart';
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({super.key});
