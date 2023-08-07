@@ -1,5 +1,4 @@
 import 'package:banking/screens/models/user_data.dart';
-import 'package:banking/state/banking_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 

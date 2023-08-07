@@ -399,18 +399,35 @@ class _UserState extends State<User> {
           Padding(
             padding: const EdgeInsets.only(
               top: 20.0,
+              left: 125,
             ),
-            child: TextButton(
-              onPressed: () {},
-              child: const Center(
-                child: Text(
-                  'Log out',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
+            child: Row(
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Center(
+                    child: Text(
+                      'Log out',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      ),
+                    ),
                   ),
                 ),
-              ),
+                IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(
+                    Icons.logout,
+                    size: 25,
+                    color: Color(0xFFFFEA7B),
+                  ),
+                ),
+              ],
             ),
           ),
           Padding(

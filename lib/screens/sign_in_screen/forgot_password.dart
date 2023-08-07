@@ -54,7 +54,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     const SizedBox(
                       height: 10,
                     ),
-                    Text(
+                    const Text(
                       'Find your account',
                       style: TextStyle(
                         color: Colors.white,
