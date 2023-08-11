@@ -1,3 +1,5 @@
+import 'package:banking/screens/sign_in_screen/sign_in_page.dart';
+import 'package:banking/state/user_state.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -33,14 +35,27 @@ class _UserState extends State<User> {
           const SizedBox(
             height: 10,
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 30.0),
-            child: Text(
-              'Settings',
-              style: TextStyle(
-                color: Color(0xFFFFEA7B),
-                fontSize: 25,
-              ),
+          Padding(
+            padding: const EdgeInsets.only(left: 30.0),
+            child: Row(
+              children: [
+                Image.asset(
+                  'images/settings.png',
+                  width: 25,
+                  height: 25,
+                  color: const Color(0xFFFFEA7B),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(left: 15.0),
+                  child: Text(
+                    'Settings',
+                    style: TextStyle(
+                      color: Color(0xFFFFEA7B),
+                      fontSize: 25,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           const SizedBox(
@@ -405,7 +420,13 @@ class _UserState extends State<User> {
               children: [
                 TextButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    UserState.bankingState.isChecked = false;
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SignInPage(),
+                      ),
+                    );
                   },
                   child: const Center(
                     child: Text(
@@ -419,7 +440,13 @@ class _UserState extends State<User> {
                 ),
                 IconButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    UserState.bankingState.isChecked = false;
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SignInPage(),
+                      ),
+                    );
                   },
                   icon: const Icon(
                     Icons.logout,

@@ -273,7 +273,7 @@ class _SignInPageState extends State<SignInPage> {
                 child: TextButton(
                   onPressed: () {
                     if (signInCheck()) {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                           builder: (context) => UserPage(),

@@ -130,11 +130,7 @@ class _UserPageState extends State<UserPage> {
               ),
             ),
             IconButton(
-              onPressed: () {
-                // setState(() {
-                //   widget.bankingState.user[widget.index].surname = 'Khachatryan';
-                // });
-              },
+              onPressed: () {},
               icon: Image.asset(
                 'images/icon_message.png',
                 width: 25,

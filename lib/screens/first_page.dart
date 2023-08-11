@@ -50,14 +50,14 @@ class _HomePageState extends State<HomePage> {
                 child: TextButton(
                   onPressed: () {
                     if (UserState.bankingState.isChecked) {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                           builder: (context) => UserPage(),
                         ),
                       );
                     } else {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                           builder: (context) =>
